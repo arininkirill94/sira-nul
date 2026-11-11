@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Unzip project
-        run: unzip sira_nul_mobile_project.zip -d project_folder
+        run: unzip sira_nul_mobile_project.zip -d .
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -37,7 +37,7 @@ jobs:
           export GODOT_ANDROID_KEYSTORE_DEBUG_PATH="$PWD/debug.keystore"
           export GODOT_ANDROID_KEYSTORE_DEBUG_USER="androiddebugkey"
           export GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD="android"
-          ./Godot_v4.3-stable_linux.x86_64 --headless --path project_folder --export-debug "Android" ../sira_nul.apk
+          ./Godot_v4.3-stable_linux.x86_64 --headless --path ZombieLooter --export-debug "Android" ../sira_nul.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
